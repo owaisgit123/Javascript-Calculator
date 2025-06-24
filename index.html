@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-container">
+            <div class="calculator-icon">
+                <div class="calc-display"></div>
+                <div class="calc-buttons">
+                    <div class="calc-btn"></div>
+                    <div class="calc-btn"></div>
+                    <div class="calc-btn"></div>
+                    <div class="calc-btn"></div>
+                </div>
+            </div>
+            
+            <h2 class="loading-title">Calculator</h2>
+            <p class="loading-subtitle">Initializing...</p>
+            
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-text" id="progressText">0%</div>
+            </div>
+            
+            <div class="loading-dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Calculator -->
+    <div class="calculator-app" id="calculatorApp">
+        <!-- Theme Toggle -->
+        <div class="theme-toggle" id="themeToggle">
+            <div class="toggle-slider">
+                <span class="toggle-icon">🌙</span>
+            </div>
+        </div>
+
+        <!-- Calculator Container -->
+        <div class="calculator-container">
+            <div class="calculator">
+                <!-- Calculator Header -->
+                <div class="calculator-header">
+                    <h2>Calculator</h2>
+                    <div class="status-indicator">
+                        <div class="status-dot"></div>
+                        <span>Ready</span>
+                    </div>
+                </div>
+
+                <!-- Display Screen -->
+                <div class="display-container">
+                    <div class="display" id="display">0</div>
+                    <div class="display-loading" id="displayLoading">
+                        <div class="loading-spinner"></div>
+                        <span>Calculating...</span>
+                    </div>
+                </div>
+
+                <!-- Button Grid -->
+                <div class="button-grid">
+                    <!-- Row 1 -->
+                    <button class="btn btn-clear" onclick="clearAll()">
+                        <span>AC</span>
+                        <div class="btn-loader"></div>
+                    </button>
+                    <button class="btn btn-clear" onclick="clearEntry()">
+                        <span>C</span>
+                        <div class="btn-loader"></div>
+                    </button>
+                    <button class="btn btn-clear" onclick="backspace()">
+                        <span>⌫</span>
+                        <div class="btn-loader"></div>
+                    </button>
+                    <button class="btn btn-operator" onclick="inputOperator('/')">
+                        <span>÷</span>
+                        <div class="btn-loader"></div>
+                    </button>
+
+                    <!-- Row 2 -->
+                    <button class="btn btn-number" onclick="inputNumber('7')">
+                        <span>7</span>
+                        <div class="btn-loader"></div>
+                    </button>
+                    <button class="btn btn-number" onclick="inputNumber('8')">
+                        <span>8</span>
+                        <div class="btn-loader"></div>
+                    </button>
+                    <button class="btn btn-number" onclick="inputNumber('9')">
+                        <span>9</span>
+                        <div class="btn-loader"></div>
+                    </button>
+                    <button class="btn btn-operator" onclick="inputOperator('*')">
+                        <span>×</span>
+                        <div class="btn-loader"></div>
+                    </button>
+
+                    <!-- Row 3 -->
+                    <button class="btn btn-number" onclick="inputNumber('4')">
+                        <span>4</span>
+                        <div class="btn-loader"></div>
+                    </button>
+                    <button class="btn btn-number" onclick="inputNumber('5')">
+                        <span>5</span>
+                        <div class="btn-loader"></div>
+                    </button>
+                    <button class="btn btn-number" onclick="inputNumber('6')">
+                        <span>6</span>
+                        <div class="btn-loader"></div>
+                    </button>
+                    <button class="btn btn-operator" onclick="inputOperator('-')">
+                        <span>−</span>
+                        <div class="btn-loader"></div>
+                    </button>
+
+                    <!-- Row 4 -->
+                    <button class="btn btn-number" onclick="inputNumber('1')">
+                        <span>1</span>
+                        <div class="btn-loader"></div>
+                    </button>
+                    <button class="btn btn-number" onclick="inputNumber('2')">
+                        <span>2</span>
+                        <div class="btn-loader"></div>
+                    </button>
+                    <button class="btn btn-number" onclick="inputNumber('3')">
+                        <span>3</span>
+                        <div class="btn-loader"></div>
+                    </button>
+                    <button class="btn btn-operator" onclick="inputOperator('+')">
+                        <span>+</span>
+                        <div class="btn-loader"></div>
+                    </button>
+
+                    <!-- Row 5 -->
+                    <button class="btn btn-number btn-zero" onclick="inputNumber('0')">
+                        <span>0</span>
+                        <div class="btn-loader"></div>
+                    </button>
+                    <button class="btn btn-number" onclick="inputDecimal()">
+                        <span>.</span>
+                        <div class="btn-loader"></div>
+                    </button>
+                    <button class="btn btn-equals" onclick="calculate()">
+                        <span>=</span>
+                        <div class="btn-loader"></div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
